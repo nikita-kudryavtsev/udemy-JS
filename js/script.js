@@ -12,10 +12,15 @@
 //git add -A 
 //git status
 //git commit -a -m"first commit"
+//git log
+// git remote add origin https://github.com/nikita-kudryavtsev/udemyjs1.git
+// git push -u origin master
+
 
 // Оператор !
 // const isChecked = false,
 // 	isClose = false;
+
 
 // console.log(isChecked || !isClose);
 
