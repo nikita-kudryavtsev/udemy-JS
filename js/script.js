@@ -16,7 +16,11 @@
 // git remote add origin https://github.com/nikita-kudryavtsev/udemyjs1.git
 // git push -u origin master
 //git remote rm origin
-
+// git clone адрес репозитория - клонировать репозиторий на локальный компютер
+// git branch -M main
+// git push
+// git clone https://github. it [folderName]
+// git pull
 
 // Оператор !
 // const isChecked = false,
