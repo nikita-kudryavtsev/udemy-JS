@@ -15,6 +15,7 @@
 //git log
 // git remote add origin https://github.com/nikita-kudryavtsev/udemyjs1.git
 // git push -u origin master
+//git remote rm origin
 
 
 // Оператор !
