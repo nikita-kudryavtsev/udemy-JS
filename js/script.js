@@ -1,24 +1,63 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  privat: false
-};
 
-const a = prompt('Один из просмотренных фильмов?', ''),
-	b = prompt('На сколько оцените его?', ''),
-	c = prompt('Один из просмотренных фильмов?', ''),
-	d = prompt('На сколько оцените его?', '');
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
 
-console.log(personalMovieDB);
+
+// УРОК 13 УСЛОВИЯ 
+//const num = 50;
+// if (num < 49) {
+//   console.log('error');
+// } else if (num > 100) {
+//   console.log('много');
+// } else {
+//   console.log('ok');
+// }
+
+// Тернарный оператор
+//num === 50 ? console.log('ok') : console.log('mist');
+//унарный и бинарный аргумент
+
+// switch(num) {
+//   case 49:
+//     console.log('ne verno');
+//     break;
+//   case 100:
+//     console.log('ne verno');
+//     break;
+//   case 50: 
+//     console.log('verno');
+//     break;
+//   default:
+//     console.log('не в этот раз');
+// }
+// switch всегда идет на строгое сравнение
+
+
+
+
+// 12 Урок 1 задание
+// const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+// const personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   privat: false
+// };
+
+// const a = prompt('Один из просмотренных фильмов?', ''),
+// 	b = prompt('На сколько оцените его?', ''),
+// 	c = prompt('Один из просмотренных фильмов?', ''),
+// 	d = prompt('На сколько оцените его?', '');
+
+// personalMovieDB.movies[a] = b;
+// personalMovieDB.movies[c] = d;
+
+// console.log(personalMovieDB);
+
 
 
 
