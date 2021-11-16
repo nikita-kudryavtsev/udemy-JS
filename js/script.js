@@ -1,5 +1,35 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
+//Методы и свойства у строк и чисел
+//Строки
+const str = 'test';
+const arr = [1, 2, 3]
+
+// console.log(str[2]);
+console.log(arr.length); //свойство
+
+console.log(str.toUpperCase()); // метод
+console.log(str.toLowerCase());
+
+const fruit = 'Some fruit'
+console.log(fruit.indexOf('fruit'));
+
+
+const logg = 'hello world';
+
+console.log(logg.slice(6, 11)); //Поддерживает минусы
+
+console.log(logg.substring(6, 11)); //Не поддерживает
+console.log(logg.substr(6, 5)); //Не поддерживает
+
+//Числа
+const num = 12.2;
+console.log(Math.round(num)); //Округление
+
+const test = '12.2px'
+//console.log(parseInt(test)); //Переводит число в другую систему исчисления
+console.log(parseFloat(test)); //Возвращает с десятичными
+
 
 // УРОК 16 Стрелочные функции
 // let num = 20; 
