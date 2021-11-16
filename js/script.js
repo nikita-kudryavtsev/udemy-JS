@@ -1,6 +1,86 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
 
+// УРОК 16 Стрелочные функции
+// let num = 20; 
+
+// Function Declaration - существует до ее объявления
+// function showFirstMessage(text) {
+//   console.log(text);  
+//   let num = 10; 
+//   console.log(num);
+// }
+
+// showFirstMessage('Hello world');
+// console.log(num);
+
+// function calc(a, b) {
+//   return (a + b);
+// }
+// console.log(calc(4, 3));
+// console.log(calc(5, 6));
+// console.log(calc(10, 6));
+
+
+// function ret() {
+//   let num = 50;
+//   return num;
+// }
+// const anotherNum = ret();
+// console.log(anotherNum);
+
+// //Function expression - создается только после объявления
+// // 
+// const logger = function() {
+//   console.log('hello');
+// };
+// logger();
+// // Стрелочные функции
+
+// const calc = (a, b) => { 
+//   console.log('1');
+//   return a + b 
+// };
+
+
+
+// Урок 15 Практика Циклы
+// const numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+
+// const personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false,
+// };
+
+// console.log(personalMovieDB);
+
+// for (let i = 0; i < 1; i++) {
+// 	const a = prompt('Один из просмотренных фильмов?', '');
+// 	const b = prompt('На сколько оцените его?', '');
+// 	if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+// 		personalMovieDB.movies[a] = b;
+// 		console.log('done');
+// 	} else {
+// 		console.log('error');
+// 		i--;
+// 	}
+// }
+
+// if (personalMovieDB.count < 10) {
+// 	console.log('Просмотренно довольно мало фильмов!');
+// } else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+// 	console.log('Вы классический зритель!');
+// } else if (personalMovieDB.count >= 30) {
+//   console.log('Вы киноман!');
+// } else {
+//     console.log('Произошла ошибка');
+//   }
+
+// personalMovieDB.count < 10 ? console.log('Просмотренно мало фильмов'): personalMovieDB.count >=10 && personalMovieDB.count < 30 ? console.log('Классический зритель'): personalMovieDB.count >=30 ? console.log('Киноман') :console.log('Ошибка ввода');
+
 
 
 //УРОК 14 ЦИКЛЫ
@@ -30,9 +110,7 @@
 //   console.log(i);
 // }
 
-
-
-// УРОК 13 УСЛОВИЯ 
+// УРОК 13 УСЛОВИЯ
 //const num = 50;
 // if (num < 49) {
 //   console.log('error');
@@ -53,15 +131,13 @@
 //   case 100:
 //     console.log('ne verno');
 //     break;
-//   case 50: 
+//   case 50:
 //     console.log('verno');
 //     break;
 //   default:
 //     console.log('не в этот раз');
 // }
 // switch всегда идет на строгое сравнение
-
-
 
 
 // 12 Урок 1 задание
@@ -85,21 +161,19 @@
 
 // console.log(personalMovieDB);
 
-
-
-
 //git
 //git init
 //git config --local user.name "Nikita"
 //git config --global user.email kudryavtsev.n.s@mail.com
-//git add -A 
+//git add -A
 //git status
 //git commit -a -m"first commit"
 //git log
 // git remote add origin https://github.com/nikita-kudryavtsev/udemyjs1.git
 // git push -u origin master
-//git remote rm origin
+//git remote rm origin удалить
 // git clone адрес репозитория - клонировать репозиторий на локальный компютер
+
 // git branch -M main
 // git push
 // git clone https://github. it [folderName]
@@ -109,9 +183,7 @@
 // const isChecked = false,
 // 	isClose = false;
 
-
 // console.log(isChecked || !isClose);
-
 
 // Оператор ||
 //const isChecked = true,
@@ -119,13 +191,11 @@
 
 // console.log(isChecked || isClose);
 
-
 // Оператор &&
 // const isChecked = true,
 // 	isClose = false;
 
 //  console.log(isChecked && isClose);
-  
 
 // Интерполяция
 // const category = 'toys';
