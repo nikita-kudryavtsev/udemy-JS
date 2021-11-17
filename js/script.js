@@ -1,24 +1,62 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
+//УРОК 21 МАССИВЫ И ПСЕВДОМАССИВЫ
+
+const arr = [1, 12, 26, 6, 8];
+arr.sort(compareNum);
+console.log(arr);
+// console.log(arr.length);
+// console.log(arr);
+
+function compareNum(a, b) {
+	return a - b;
+}
+
+//Метод перебора массива
+arr.forEach(function (item, i, arr) {
+	console.log(`${i}: ${item} внутри массива ${arr}`);
+});
+
+//методы массива сплит создает данные в массив разделенные таким то символом
+const str = prompt('', ''); 
+const products = str.split(', ');
+products.sort(); // сортировка по алфавиту (только в строчных элементах)
+console.log(products.join('; ')); // строковое разделение
+
+
+
+
+//arr.pop() //Удаляет последний элемент массива
+//arr.push(10); //добавляет последний элемент
+
+console.log(arr);
+
+for (let i = 0; i < arr.length; i++) {
+	console.log(arr[i]);
+}
+for (let value of arr) {
+	console.log(value);
+}
+
 //УРОК 2О Объекты, ДЕСТРУКТУРИЗАЦИЯ ОБЪЕКТОВ
 
-const options = {
-	name: 'test',
-	with: 1024,
-	height: 1024,
-	colors: {
-		border: 'black',
-		bg: 'red',
-	},
-	makeTest: function() {
-		console.log('Test');
-	}
-};
-options.makeTest();
+// const options = {
+// 	name: 'test',
+// 	with: 1024,
+// 	height: 1024,
+// 	colors: {
+// 		border: 'black',
+// 		bg: 'red',
+// 	},
+// 	makeTest: function() {
+// 		console.log('Test');
+// 	}
+// };
+// options.makeTest();
 
-//Деструктуризация 
-const {border, bg} = options.colors;
-console.log(border);
+// //Деструктуризация 
+// const {border, bg} = options.colors;
+// console.log(border);
 
 // console.log(options.name);
 
