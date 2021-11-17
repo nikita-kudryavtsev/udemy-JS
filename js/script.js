@@ -1,81 +1,105 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
+// УРОК 19 Callback-функции
+// callback - функция которая должна быть выполнена после того как выполнена другая
+function first() {
+	//Do something
+	setTimeout(function() {
+		console.log(1);
+	}, 500);
+}
+
+function second() {
+	console.log(2);
+}
+first();
+second();
+
+
+function learnJS(lang, callback) {
+	console.log(`Я учу: ${lang}`);
+	callback();
+}
+
+function done() {
+	console.log('Я прошел этот урок');
+
+}
+
+learnJS('JavaScript', done);
+
+
+
 //УРОК 18 ПРАКТИКА ИСПОЛЬЗОВАНИЯ ФУНКЦИЙ
 
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-	numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// function start() {
+// 	numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-	while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-		numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-	}
-}
-
-start();
-
-const personalMovieDB = {
-	count: numberOfFilms,
-	movies: {},
-	actors: {},
-	genres: [],
-	privat: false,
-};
-
-
-// function writeYourGenres() {
-//   const a = prompt(`Ваш любимый жанр под номером ${}`)
-//   const b = prompt(`Ваш любимый жанр под номером ${}`)
-//   const c = prompt(`Ваш любимый жанр под номером ${}`)
+// 	while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+// 		numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// 	}
 // }
 
-// personalMovieDB.genres = [a, b, c, d]
+// start();
 
-function rememberMyFilms() {
-	for (let i = 0; i < 1; i++) {
-		const a = prompt('Один из просмотренных фильмов?', ''),
-			    b = prompt('На сколько оцените его?', '');
+// const personalMovieDB = {
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	privat: false,
+// };
 
-		if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-			personalMovieDB.movies[a] = b;
-			console.log('done');
-		} else {
-			console.log('error');
-			i--;
-		}
-	}
-}
+// function rememberMyFilms() {
+// 	for (let i = 0; i < 1; i++) {
+// 		const a = prompt('Один из просмотренных фильмов?', ''),
+// 			    b = prompt('На сколько оцените его?', '');
 
-rememberMyFilms();
+// 		if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+// 			personalMovieDB.movies[a] = b;
+// 			console.log('done');
+// 		} else {
+// 			console.log('error');
+// 			i--;
+// 		}
+// 	}
+// }
 
-function detectPersonalLevel() {
-	if (personalMovieDB.count < 10) {
-		console.log('Просмотренно довольно мало фильмов!');
-	} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
-		console.log('Вы классический зритель!');
-	} else if (personalMovieDB.count >= 30) {
-		console.log('Вы киноман!');
-	} else {
-		console.log('Произошла ошибка');
-	}
-}
+// rememberMyFilms();
 
-detectPersonalLevel();
+// function detectPersonalLevel() {
+// 	if (personalMovieDB.count < 10) {
+// 		console.log('Просмотренно довольно мало фильмов!');
+// 	} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+// 		console.log('Вы классический зритель!');
+// 	} else if (personalMovieDB.count >= 30) {
+// 		console.log('Вы киноман!');
+// 	} else {
+// 		console.log('Произошла ошибка');
+// 	}
+// }
 
-function showMyDB(hidden) {
-	if (!hidden) {
-		console.log(personalMovieDB);
-	}
-}
+// detectPersonalLevel();
 
-showMyDB(personalMovieDB.privat);
+// function showMyDB(hidden) {
+// 	if (!hidden) {
+// 		console.log(personalMovieDB);
+// 	}
+// }
 
-function writeYourGenres() {
-  for (let i = 1; i <= 3; i++) { 
-    personalMovieDB.genres[i - 1] =  prompt(`Ваш любимый жанр под номером ${i}`);
-  }
-}
-writeYourGenres()
+// showMyDB(personalMovieDB.privat);
+
+// function writeYourGenres() {
+//   for (let i = 1; i <= 3; i++) { 
+//     personalMovieDB.genres[i - 1] =  prompt(`Ваш любимый жанр под номером ${i}`);
+//   }
+// }
+// writeYourGenres()
+
+
+
 //17 УРОК Методы и свойства у строк и чисел
 //Строки
 // const str = 'test';
