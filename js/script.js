@@ -1,42 +1,149 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
+// УРОК 22 ПЕРЕДАЧА ПО ССЫЛКЕ ИЛИ ПО ЗНАЧЕНИЮ SPREAD OPERATOR ES6-ES9
+
+// let a = 5,
+// 	b = a;
+
+// b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+// ССЫЛКА
+// const obj = {
+// 	a: 5,
+// 	b: 1
+// };
+
+// const copy = obj; // Ссылка
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+// Создаем копию меняя значение только в копии
+function copy(mainObj) {
+	let objCopy = {};
+
+	let key;
+	for (key in mainObj) {
+		objCopy[key] = mainObj[key];
+	}
+	return objCopy;
+}
+
+const numbers = {
+	a: 2, 
+	b: 5,
+	c: {
+		x: 7,
+		y: 4
+	}
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+newNumbers.c.x = 10; 
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+
+// OBJECT ASSIGN - добавить структуру в объект
+const add = {
+	d: 17, 
+	e: 20
+};
+
+// console.log(Object.assign(numbers, add));
+
+// const clone = Object.assign({}, add); //новый объект
+
+// clone.d = 20;
+
+// console.log(add);
+// console.log(clone);
+
+// копия массива slice
+const oldArray = ['a', 'b', 'c']
+const newArray = oldArray.slice();
+
+newArray[1] = 'adsdad';
+
+console.log(newArray);
+console.log(oldArray);
+
+// SPREAD оператор
+const video = ['youtube', 'vimeo', 'rutube'],
+blogs = ['wordpress', 'livejournal', 'blogger'],
+internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+//
+function log(a, b, c) {
+	console.log(a);
+	console.log(b);
+	console.log(c);
+}
+
+const num = [2, 5, 7];
+
+log(...num);
+
+//
+const array = ['a', 'b'];
+
+const newAarray = [...array];
+
+// 
+
+const q = {
+	one: 1,
+	two: 2,
+}
+const newObj = {...q};
+
+
+
+
+
 //УРОК 21 МАССИВЫ И ПСЕВДОМАССИВЫ
 
-const arr = [1, 12, 26, 6, 8];
-arr.sort(compareNum);
-console.log(arr);
-// console.log(arr.length);
+// const arr = [1, 12, 26, 6, 8];
+// arr.sort(compareNum);
+// console.log(arr);
+// // console.log(arr.length);
+// // console.log(arr);
+
+// function compareNum(a, b) {
+// 	return a - b;
+// }
+
+// //Метод перебора массива
+// arr.forEach(function (item, i, arr) {
+// 	console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// //методы массива сплит создает данные в массив разделенные таким то символом
+// const str = prompt('', '');
+// const products = str.split(', ');
+// products.sort(); // сортировка по алфавиту (только в строчных элементах)
+// console.log(products.join('; ')); // строковое разделение
+
+// //arr.pop() //Удаляет последний элемент массива
+// //arr.push(10); //добавляет последний элемент
+
 // console.log(arr);
 
-function compareNum(a, b) {
-	return a - b;
-}
-
-//Метод перебора массива
-arr.forEach(function (item, i, arr) {
-	console.log(`${i}: ${item} внутри массива ${arr}`);
-});
-
-//методы массива сплит создает данные в массив разделенные таким то символом
-const str = prompt('', ''); 
-const products = str.split(', ');
-products.sort(); // сортировка по алфавиту (только в строчных элементах)
-console.log(products.join('; ')); // строковое разделение
-
-
-
-
-//arr.pop() //Удаляет последний элемент массива
-//arr.push(10); //добавляет последний элемент
-
-console.log(arr);
-
-for (let i = 0; i < arr.length; i++) {
-	console.log(arr[i]);
-}
-for (let value of arr) {
-	console.log(value);
-}
+// for (let i = 0; i < arr.length; i++) {
+// 	console.log(arr[i]);
+// }
+// for (let value of arr) {
+// 	console.log(value);
+// }
 
 //УРОК 2О Объекты, ДЕСТРУКТУРИЗАЦИЯ ОБЪЕКТОВ
 
@@ -54,13 +161,11 @@ for (let value of arr) {
 // };
 // options.makeTest();
 
-// //Деструктуризация 
+// //Деструктуризация
 // const {border, bg} = options.colors;
 // console.log(border);
 
 // console.log(options.name);
-
-
 
 // delete options.name;
 
