@@ -1,6 +1,75 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
+//УРОК 24 ПРАКТИКА, ИСПОЛЬЗУЕМ ОБЪЕКТЫ
 
+const personalMovieDB = {
+	count: 0,
+	movies: {},
+	actors: {},
+	genres: [],
+	privat: false,
+	start: function () {
+		personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+		while (
+			personalMovieDB.count == '' ||
+			personalMovieDB.count == null ||
+			isNaN(personalMovieDB.count)
+		) {
+			personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели?', '');
+		}
+	},
+	rememberMyFilms: function () {
+		for (let i = 0; i < 1; i++) {
+			const a = prompt('Один из просмотренных фильмов?', ''),
+				b = prompt('На сколько оцените его?', '');
+
+			if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+				personalMovieDB.movies[a] = b;
+				console.log('done');
+			} else {
+				console.log('error');
+				i--;
+			}
+		}
+	},
+	detectPersonalLevel: function () {
+		if (personalMovieDB.count < 10) {
+			console.log('Просмотренно довольно мало фильмов!');
+		} else if (personalMovieDB.count < 30 && personalMovieDB.count >= 10) {
+			console.log('Вы классический зритель!');
+		} else if (personalMovieDB.count >= 30) {
+			console.log('Вы киноман!');
+		} else {
+			console.log('Произошла ошибка');
+		}
+	},
+	showMyDB: function (hidden) {
+		if (!hidden) {
+			console.log(personalMovieDB);
+		}
+	},
+	toggleVisibleMyDB: function () {
+		if (personalMovieDB.privat) {
+			personalMovieDB.privat = false;
+		} else {
+			personalMovieDB.privat = true;
+		}
+	},
+	writeYourGenres: function () {
+		for (let i = 1; i <= 3; i++) {
+			let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+			if (genre == '' || genre === null) {
+				console.log('Вы ввели некорректные данные');
+			} else {
+				personalMovieDB.genres[i - 1] = genre;
+			}
+		}
+		personalMovieDB.genres.forEach((item, i) => {
+			console.log(`"Любимый жанр ${i + 1} - это ${item}`);
+		});
+	},
+};
 
 // УРОК 23 ОСНОВЫ ООП, прототипно-ориентированное наследие
 
@@ -10,31 +79,28 @@
 // console.log(typeof(str));
 // console.log(typeof(strObj));
 
-console.dir([1, 2, 3]);
+// console.dir([1, 2, 3]);
 
-const soldier = {
-	health: 400,
-	armor: 100,
-	sayHello: function() {
-		console.log('Hello');
-	}
-};
-
-const john = Object.create(soldier);
-
-// const john = {
-// 	health: 100,
+// const soldier = {
+// 	health: 400,
+// 	armor: 100,
+// 	sayHello: function() {
+// 		console.log('Hello');
+// 	}
 // };
-//УСТАРЕВШИЙ
-john.__proto__ = soldier;
-//АКТУАЛЬНЫЙ 
-Object.setPrototypeOf(john, soldier); //функции солдата дефолтные для джона
 
+// const john = Object.create(soldier);
 
-// console.log(john.armor);
-john.sayHello();
+// // const john = {
+// // 	health: 100,
+// // };
+// //УСТАРЕВШИЙ
+// john.__proto__ = soldier;
+// //АКТУАЛЬНЫЙ
+// Object.setPrototypeOf(john, soldier); //функции солдата дефолтные для джона
 
-
+// // console.log(john.armor);
+// john.sayHello();
 
 // УРОК 22 ПЕРЕДАЧА ПО ССЫЛКЕ ИЛИ ПО ЗНАЧЕНИЮ SPREAD OPERATOR ES6-ES9
 
@@ -71,7 +137,7 @@ john.sayHello();
 // }
 
 // const numbers = {
-// 	a: 2, 
+// 	a: 2,
 // 	b: 5,
 // 	c: {
 // 		x: 7,
@@ -82,15 +148,14 @@ john.sayHello();
 // const newNumbers = copy(numbers);
 
 // newNumbers.a = 10;
-// newNumbers.c.x = 10; 
+// newNumbers.c.x = 10;
 
 // // console.log(newNumbers);
 // // console.log(numbers);
 
-
 // // OBJECT ASSIGN - добавить структуру в объект
 // const add = {
-// 	d: 17, 
+// 	d: 17,
 // 	e: 20
 // };
 
@@ -134,17 +199,13 @@ john.sayHello();
 
 // const newAarray = [...array];
 
-// // 
+// //
 
 // const q = {
 // 	one: 1,
 // 	two: 2,
 // }
 // const newObj = {...q};
-
-
-
-
 
 //УРОК 21 МАССИВЫ И ПСЕВДОМАССИВЫ
 
@@ -221,7 +282,7 @@ john.sayHello();
 // }
 // console.log(counter);
 
-console.log(Object.keys(options).length);
+//console.log(Object.keys(options).length);
 
 // УРОК 19 Callback-функции
 // callback - функция которая должна быть выполнена после того как выполнена другая
