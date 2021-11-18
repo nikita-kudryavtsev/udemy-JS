@@ -1,5 +1,41 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
+
+
+// УРОК 23 ОСНОВЫ ООП, прототипно-ориентированное наследие
+
+// let str = 'some';
+// let strObj = new String(str);
+
+// console.log(typeof(str));
+// console.log(typeof(strObj));
+
+console.dir([1, 2, 3]);
+
+const soldier = {
+	health: 400,
+	armor: 100,
+	sayHello: function() {
+		console.log('Hello');
+	}
+};
+
+const john = Object.create(soldier);
+
+// const john = {
+// 	health: 100,
+// };
+//УСТАРЕВШИЙ
+john.__proto__ = soldier;
+//АКТУАЛЬНЫЙ 
+Object.setPrototypeOf(john, soldier); //функции солдата дефолтные для джона
+
+
+// console.log(john.armor);
+john.sayHello();
+
+
+
 // УРОК 22 ПЕРЕДАЧА ПО ССЫЛКЕ ИЛИ ПО ЗНАЧЕНИЮ SPREAD OPERATOR ES6-ES9
 
 // let a = 5,
@@ -24,87 +60,87 @@
 // console.log(obj);
 
 // Создаем копию меняя значение только в копии
-function copy(mainObj) {
-	let objCopy = {};
+// function copy(mainObj) {
+// 	let objCopy = {};
 
-	let key;
-	for (key in mainObj) {
-		objCopy[key] = mainObj[key];
-	}
-	return objCopy;
-}
+// 	let key;
+// 	for (key in mainObj) {
+// 		objCopy[key] = mainObj[key];
+// 	}
+// 	return objCopy;
+// }
 
-const numbers = {
-	a: 2, 
-	b: 5,
-	c: {
-		x: 7,
-		y: 4
-	}
-};
+// const numbers = {
+// 	a: 2, 
+// 	b: 5,
+// 	c: {
+// 		x: 7,
+// 		y: 4
+// 	}
+// };
 
-const newNumbers = copy(numbers);
+// const newNumbers = copy(numbers);
 
-newNumbers.a = 10;
-newNumbers.c.x = 10; 
+// newNumbers.a = 10;
+// newNumbers.c.x = 10; 
 
-// console.log(newNumbers);
-// console.log(numbers);
+// // console.log(newNumbers);
+// // console.log(numbers);
 
 
-// OBJECT ASSIGN - добавить структуру в объект
-const add = {
-	d: 17, 
-	e: 20
-};
+// // OBJECT ASSIGN - добавить структуру в объект
+// const add = {
+// 	d: 17, 
+// 	e: 20
+// };
 
-// console.log(Object.assign(numbers, add));
+// // console.log(Object.assign(numbers, add));
 
-// const clone = Object.assign({}, add); //новый объект
+// // const clone = Object.assign({}, add); //новый объект
 
-// clone.d = 20;
+// // clone.d = 20;
 
-// console.log(add);
-// console.log(clone);
+// // console.log(add);
+// // console.log(clone);
 
-// копия массива slice
-const oldArray = ['a', 'b', 'c']
-const newArray = oldArray.slice();
+// // копия массива slice
+// const oldArray = ['a', 'b', 'c']
+// const newArray = oldArray.slice();
 
-newArray[1] = 'adsdad';
+// newArray[1] = 'adsdad';
 
-console.log(newArray);
-console.log(oldArray);
+// console.log(newArray);
+// console.log(oldArray);
 
-// SPREAD оператор
-const video = ['youtube', 'vimeo', 'rutube'],
-blogs = ['wordpress', 'livejournal', 'blogger'],
-internet = [...video, ...blogs, 'vk', 'facebook'];
+// // SPREAD оператор
+// const video = ['youtube', 'vimeo', 'rutube'],
+// blogs = ['wordpress', 'livejournal', 'blogger'],
+// internet = [...video, ...blogs, 'vk', 'facebook'];
 
-console.log(internet);
-//
-function log(a, b, c) {
-	console.log(a);
-	console.log(b);
-	console.log(c);
-}
+// console.log(internet);
+// //
+// function log(a, b, c) {
+// 	console.log(a);
+// 	console.log(b);
+// 	console.log(c);
+// }
 
-const num = [2, 5, 7];
+// const num = [2, 5, 7];
 
-log(...num);
+// log(...num);
 
-//
-const array = ['a', 'b'];
+// //
+// const array = ['a', 'b'];
 
-const newAarray = [...array];
+// const newAarray = [...array];
 
-// 
+// // 
 
-const q = {
-	one: 1,
-	two: 2,
-}
-const newObj = {...q};
+// const q = {
+// 	one: 1,
+// 	two: 2,
+// }
+// const newObj = {...q};
 
 
 
