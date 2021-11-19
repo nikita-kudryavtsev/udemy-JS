@@ -1,6 +1,24 @@
 'use strict'; // мы работаем в современном режиме, строгий режим
 
 
+//УРОК 27 Вопросы с собеседований
+
+
+// console.log(2 && 1 && null && 0 && undefined);
+// И запинается на лжи
+
+// alert(null || 2 && 3 || 4) 
+// // ИЛИ запинается на правде ответ 3 птмушо приорите у и выше
+
+// const	a = [1, 2, 3]; 
+// const b = [1, 2, 3];
+// // не равны посколько разные переменные
+
+// console.log(0 || '' || 2 || undefined || true || falsе);
+
+
+
+
 //УРОК 26 ДИНАМИЧЕСКАЯ ТИПИЗАЦИЯ 
 // ДТ - возможность одного типа данных превращаться в другой
 
@@ -10,49 +28,49 @@
 // console.log(typeof(String(null)));
 // console.log(typeof(String(4)));
 //2) console
-console.log(typeof(5 + '')); 
+// console.log(typeof(5 + '')); 
 
-const num = 5;
+// const num = 5;
 
-console.log('https://vk.com/catalog/' + num);
+// console.log('https://vk.com/catalog/' + num);
 
-const fontSize = 26 + 'px';
+// const fontSize = 26 + 'px';
 
-// to number
+// // to number
 
-//1) 
-console.log(typeof(Number('4')));
+// //1) 
+// console.log(typeof(Number('4')));
 
-//2) унарный плюс
-console.log(typeof(+'5'));
+// //2) унарный плюс
+// console.log(typeof(+'5'));
 
-//3) 
-console.log(typeof(parseInt('15px', 10)));
+// //3) 
+// console.log(typeof(parseInt('15px', 10)));
 
-let answ = +prompt('Hello', '');
+// let answ = +prompt('Hello', '');
 
-// to boolean 
+// // to boolean 
 
-// 0, '', null, undefined, NaN; - false 
+// // 0, '', null, undefined, NaN; - false 
 
-// 1)
-let switcher = null;
+// // 1)
+// let switcher = null;
 
-if (switcher) {
-	console.log('Working...');
-}
+// if (switcher) {
+// 	console.log('Working...');
+// }
 
-switcher = 1;
+// switcher = 1;
 
-if (switcher) {
-	console.log('Working...');
-}
+// if (switcher) {
+// 	console.log('Working...');
+// }
 
-// 2) 
-console.log(typeof(Boolean('4')));
+// // 2) 
+// console.log(typeof(Boolean('4')));
 
-//3
-console.log(typeof(!!'444'));
+// //3
+// console.log(typeof(!!'444'));
 
 
 
